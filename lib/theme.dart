@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppColors{
-  static Color primaryColor = const Color.fromRGBO(162,29,19,1);
+class AppColors {
+  static Color primaryColor = const Color.fromRGBO(162, 29, 19, 1);
   static Color primaryAccent = const Color.fromRGBO(120, 14, 14, 1);
   static Color secondaryColor = const Color.fromRGBO(45, 45, 45, 1);
   static Color secondaryAccent = const Color.fromRGBO(35, 35, 35, 1);
@@ -12,7 +12,8 @@ class AppColors{
 }
 
 ThemeData primaryTheme = ThemeData(
-  // seed color
+
+  // seed color theme
   colorScheme: ColorScheme.fromSeed(
     seedColor: AppColors.primaryColor,
   ),
@@ -20,7 +21,7 @@ ThemeData primaryTheme = ThemeData(
   // scaffold color
   scaffoldBackgroundColor: AppColors.secondaryAccent,
 
-  // appbar theme colors
+  // app bar theme colors
   appBarTheme: AppBarTheme(
     backgroundColor: AppColors.secondaryColor,
     foregroundColor: AppColors.textColor,
@@ -28,24 +29,34 @@ ThemeData primaryTheme = ThemeData(
     centerTitle: true,
   ),
 
-  textTheme:TextTheme().copyWith(
+  // text theme
+  textTheme: TextTheme(
     bodyMedium: TextStyle(
       color: AppColors.textColor,
       fontSize: 16,
       letterSpacing: 1,
-      ),
+    ),
     headlineMedium: TextStyle(
-      color: AppColors.titleColor,
+      color: AppColors.titleColor, 
       fontSize: 16,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.bold, 
       letterSpacing: 1,
-      ), 
+    ),
     titleMedium: TextStyle(
-      color: AppColors.titleColor,
-      fontSize: 16,
+      color: AppColors.titleColor, 
+      fontSize: 18, 
       fontWeight: FontWeight.bold,
       letterSpacing: 2,
-      ),
+    ),
+  ),
+
+  // card theme
+  cardTheme: CardTheme(
+    color: AppColors.secondaryColor.withValues(alpha: 0.5),
+    surfaceTintColor: Colors.transparent,
+    shape: const RoundedRectangleBorder(),
+    shadowColor: Colors.transparent,
+    margin: const EdgeInsets.only(bottom: 16),
   ),
 
 );
